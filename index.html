@@ -3,9 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ubuntu Events</title>
 </head>
 <body>
+    <nav>
+        <div>
+          <a href="#">UbuntuEvents - Africa</a>
+        </div>
     
+        <div>
+          <button>Home</button>
+          <button>Events</button>
+          <button>Admin</button>
+        </div>
+    
+        <button>☰</button>
+
+        <div id="mobile-menu">
+          <button>Home</button>
+          <button>Events</button>
+          <button>Admin</button>
+        </div>
+    </nav>
+
+      <div id="page-home">
+        <section>
+          <div>
+            <p>African Student Hub · Est. 2024</p>
+            <h1>Where African Students Unite <span>Thrive</span></h1>
+            <p>
+              Discover, register, and celebrate events across African campuses.
+              From Nairobi to Lagos, Accra to Kigali — your journey starts here.
+            </p>
+            <div>
+              <button>Browse Events</button>
+              <button>Add New Event</button>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Upcoming Events</h2>
+            <p>Featured</p>
+          </div>
+          <button>See All Events</button>
+          <div id="featured-events"></div>
+        </section>
+      </div>
+    
+      <div id="page-events" hidden>
+
+        <section>
+          <p>All Campus Events</p>
+          <h2>Find Your Event</h2>
+          <p>Register, connect, and grow across African campuses.</p>
+        </section>
+    
+        <section>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search events, categories..."
+          />
+    
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="Technology">Technology</option>
+            <option value="Culture">Culture</option>
+            <option value="Sports">Sports</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+            <option value="Business">Business</option>
+            <option value="Health">Health</option>
+          </select>
+        </section>
+
+        <section>
+          <div id="events-grid"></div>
+          <div id="events-empty">
+            <p>No events match your search. Try a different keyword or category.</p>
+          </div>
+        </section>
+    
+      </div>
+    
+      <div id="page-admin" >
+
+        <section>
+          <p>Administrator Panel</p>
+          <h2>Manage Events</h2>
+          <p>Add, review, and remove campus events.</p>
+        </section>
+    
+        <section>
+          <div>
+            <h3>Add New Event</h3>
+            <p id="form-error" hidden></p>
+    
+            <label for="f-title">Event Title</label>
+            <input type="text" id="f-title" placeholder="e.g. Pan-African Hackathon" />
+    
+            <label for="f-category">Category</label>
+            <select id="f-category">
+              <option value="">Select Category</option>
+              <option>Technology</option>
+              <option>Culture</option>
+              <option>Sports</option>
+              <option>Science</option>
+              <option>Arts</option>
+              <option>Business</option>
+              <option>Health</option>
+            </select>
+    
+            <label for="f-city">City / Campus</label>
+            <input type="text" id="f-city" placeholder="e.g. Nairobi, Kenya" />
+    
+            <label for="f-seats">Total Seats</label>
+            <input type="number" id="f-seats" placeholder="e.g. 50"/>
+    
+            <button>+ Create Event</button>
+          </div>
+
+          <div>
+            <h3>Event Registry</h3>
+            <p id="admin-count">0 events</p>
+    
+            <table>
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Category</th>
+                  <th>City</th>
+                  <th>Total Seats</th>
+                  <th>Registered</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-table-body"></tbody>
+            </table>
+    
+            <p id="admin-empty">No events yet. Add one above!</p>
+          </div>
+    
+        </section>
+      </div>
+    
+      <div id="toast">
+        <span id="toast-icon"></span>
+        <span id="toast-msg"></span>
+      </div>
+
 </body>
 </html>
